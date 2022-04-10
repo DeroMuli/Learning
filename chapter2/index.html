@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>ReactJS Chapter 1</title>
+        <script type="text/javascript" src="https://unpkg.com/react-bootstrap@2.0.0-rc.1/dist/react-bootstrap.min.js">            
+        </script>
         <!--src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"-->
         <script type="text/javascript" src="js/react.min.js"></script>
          <!--src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"-->
@@ -16,38 +18,6 @@
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div id="nav"></div>
-        <script type="text/babel">
-           var navbarHTML =
-           <nav className="navbar navbar-default navbar-static-top" role="navigation">
-              <div className="container">
-                <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span className="sr-only">Toggle navigation</span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                    </button>
-                    <a className="navbar-brand" href="#">EIS</a>
-                </div>
-                <div className="navbar-collapse collapse">
-                    <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#">Edit Profile</a></li>
-                        <li className="dropdown">
-                            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                Help Desk <b className="caret"></b>
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a href="#">View Tickets</a></li>
-                                <li><a href="#">New Ticket</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-              </div>
-            </nav>
-           ReactDOM.render(navbarHTML,document.getElementById('nav'));
-        </script>
+        
     </body>
 </html>

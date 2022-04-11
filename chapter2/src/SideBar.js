@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 class SideBar extends React.Component{
     render() {
         var df = this.props.children;
@@ -13,14 +14,16 @@ class SideBar extends React.Component{
                         <center>Image</center>
                     </a>
                 </li>
-                <li className='list-group-item  text-right'>
-                    <span className='pull-left'>
-                        <strong className='pull-left'>
+                <li className='list-group-item text-right'>
+                    <span className ="float-start" >
+                        <strong className ="float-start">
                                  Joining Date
                             <div className='clearfix'/>
                         </strong>
                     </span>
+                    <div className='float-end'>
                     2.13.2022
+                    </div>
                 </li>
             </ul>
         )

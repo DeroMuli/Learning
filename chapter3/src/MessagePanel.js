@@ -1,7 +1,7 @@
 import React from 'react'
 const MessagePanel = class extends React.Component {
     render() {
-        return ( <div className='collapse in'> {this.props.children} </div>)
+        return ( <div> {this.props.children} </div>)
     }
 }
 

@@ -5,7 +5,7 @@ class MyApp extends React.Component{
     constructor(){
         super()
         this.state = {
-            collapse : true
+            collapse : false
         }
     }
 
@@ -17,13 +17,13 @@ class MyApp extends React.Component{
     }
 
     render() {
-        const showhideToggle = 
+        const showhideToggle = this.state.collapse ?
                (<MessagePanel>
                    <MessagePanel.Heading text='Show/Hide' />
                    <MessagePanel.Content>
                        Phasellus sed velit venenatis, suscipit eros a, laoreet dui.
                        </MessagePanel.Content>
-                </MessagePanel>);
+                </MessagePanel>) : null;
         return (<div>
                   <h1>Namespaced Components Demo</h1>
                   <p><Button onClick={() => this.handletoggle()}>Toggle</Button></p>

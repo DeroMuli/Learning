@@ -7,13 +7,16 @@ class MyApp extends React.Component{
         this.state = {
             collapse : false
         }
+        //binding the handler toggle button 
+        this.handletoggle = this.handletoggle.bind(this)
     }
 
     handletoggle() {
-        var nextstate = !this.state.collapse
-        this.setState({
-            collapse : nextstate
-        })
+        this.setState( prevstate => (
+            {
+                collapse : !prevstate.collapse
+            }
+        ))
     }
 
     render() {
@@ -26,7 +29,7 @@ class MyApp extends React.Component{
                 </MessagePanel>) : null;
         return (<div>
                   <h1>Namespaced Components Demo</h1>
-                  <p><Button onClick={() => this.handletoggle()}>Toggle</Button></p>
+                  <p><Button onClick={this.handletoggle}>Toggle</Button></p>
                   {showhideToggle}
                 </div>)
     }      

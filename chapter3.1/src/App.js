@@ -1,23 +1,19 @@
-import React from 'react';
-import Navigation from './Navigation.js'
-import SideBar from './SideBar.js'
+import React from 'react'
+import Form from './Form';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container } from 'react-bootstrap';
 import './App.css';
+import { Container,Row,Col } from 'react-bootstrap';
 
 const App = function () {
   return (
     <Container>
-    <Navigation/>
-    <div className='container'>
-      <hr />
-      <div className='row'>
-        <div className='col-sm-3'>
-          <SideBar/>
-        </div>
-        <div class="col-sm-9 profile-desc"></div>
-      </div>
-    </div>
+      <Row>
+        <Col sm={12} md={6}>
+          <h2> Add Ticket </h2>
+          <hr />
+          <Form/>
+        </Col>
+      </Row>
     </Container>
   );
 } 

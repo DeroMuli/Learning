@@ -5,7 +5,7 @@ class DepartmentInput extends React.Component{
         return (
             <Form.Group>
                 <Form.Label htmlFor="department"> Assign Department <span style={this.props.style}> * </span></Form.Label>
-                <Form.Select id = "department" required>
+                <Form.Select id = "department" ref = 'dep' required>
                     <option value=''> ---Select--- </option>
                     <option value='Admin'> Admin </option>
                     <option value='HR'> HR </option>

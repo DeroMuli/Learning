@@ -5,7 +5,7 @@ class EmailInput extends React.Component{
         return (
             <Form.Group>
                 <Form.Label htmlFor='email'>Email <span style={this.props.style}> * </span></Form.Label>
-                <Form.Control type='email' id='email' placeholder='Enter your email' required></Form.Control>
+                <Form.Control type='email' ref='email' id='email' placeholder='Enter your email' required></Form.Control>
             </Form.Group>
         )
     }

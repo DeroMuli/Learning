@@ -5,7 +5,7 @@ class IssueTypeInput extends React.Component{
         return (
         <Form.Group>
             <Form.Label htmlFor="issuetype">IssueType <span style={this.props.style}> * </span></Form.Label>
-            <Form.Select id='issuetype' required>
+            <Form.Select id='issuetype' ref = 'issue' required>
                 <option value=""> ---Select--- </option>
                 <option value="Access Related Issue"> Access Related Issue </option>
                 <option value="Email Related Issues"> Email Related Issues </option>

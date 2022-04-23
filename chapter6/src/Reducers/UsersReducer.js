@@ -24,6 +24,8 @@ export default function users(state = initialstate , action){
                 }
             ]
         case types.DELETE_USER:
-            return state.filter( user => user.id !== action.payload.id )    
+            return state.filter( user => user.id != action.payload.id )  
+        default :
+            return state
     }
 }

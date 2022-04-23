@@ -1,10 +1,21 @@
-import logo from './logo.svg';
-import AddUserInput from './components/AddUserInput';
+import UserList from './components/UserList';
+import AddUserInput from './components/AddUserInput'
+import { Container , Row , Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 function App() {
   return (
-    <AddUserInput/>
+    <Container>
+      <Row>
+        <Col>
+        <h1>UserList</h1>
+          <hr />
+          <AddUserInput />
+          <UserList />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

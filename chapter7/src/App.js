@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navigation from './Navigation'
 import MainContent from './MainContent'
-import { Container,Row ,Col } from 'react-bootstrap';
+import { Container,Row ,Col } from 'react-bootstrap'
 import './App.css';
 
 const App = function () {

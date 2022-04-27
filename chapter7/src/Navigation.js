@@ -1,5 +1,6 @@
-import React from 'react';
-import { Nav , Navbar , Container , NavDropdown  } from 'react-bootstrap';
+import React from 'react'
+import { Nav , Navbar , Container , NavDropdown  } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 class Navigation extends React.Component{
     render() {
         return (
@@ -9,11 +10,12 @@ class Navigation extends React.Component{
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/editprofile">Edit Profiles</Nav.Link>
+                  <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                  <Nav.Link as={Link} to="/editprofile">Edit Profiles</Nav.Link>
                   <NavDropdown title="Help Desk" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/viewticket">View Ticket</NavDropdown.Item>
-                    <NavDropdown.Item href="/addticket">New Ticket</NavDropdown.Item>
+                    <NavDropdown.Item  as={Link} to="/viewticket">View Ticket</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/addticket'>New Ticket </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to = '/query/Hello from Route Query'> Query </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
               </Navbar.Collapse>

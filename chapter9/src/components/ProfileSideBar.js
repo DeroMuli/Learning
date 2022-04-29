@@ -1,16 +1,16 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-class SideBar extends React.Component{
+import React from "react"
+import Image from 'react-bootstrap/Image'
+class ProfileSideBar extends React.Component {
     render() {
         return (
             <ul className='list-group'>
                 <li className='list-group-item text-muted'>
-                    Profile
+                    Derrick Muli
                 </li>
                 <li className='list-group-item'>
-                    <a className='center-block text-center' href='#'>
-                        <center>Image</center>
-                    </a>
+                    <center>
+                        <Image src='/assets/images/placeholder.jpg' thumbnail/>
+                    </center>
                 </li>
                 <li className='list-group-item text-right'>
                     <span className ="float-start" >
@@ -28,4 +28,4 @@ class SideBar extends React.Component{
     }
 }
 
-export default SideBar
+export default ProfileSideBar

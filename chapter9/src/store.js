@@ -1,7 +1,7 @@
 import { createStore } from "redux";
-import  ticketReducer from "./Reducers/TicketsReducer";
+import allreducers from './Reducers/allreducers'
 
-const store = createStore(ticketReducer)
+const store = createStore(allreducers)
 
 export default store
 

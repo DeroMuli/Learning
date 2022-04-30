@@ -28,7 +28,7 @@ class CommentsInput extends React.Component{
                         Comments <span style={this.props.style}> * </span>
                         (<span>{this.state.char_left}</span> characters left)
                     </Form.Label>
-                    <textarea ref = 'comments' className="form-control" value={this.state.value} maxLength = {this.max_char} onChange = {this.handlerchange} required/>
+                    <textarea ref = 'comments' className="form-control" value={this.state.value} maxLength = {this.max_char}  onChange = {this.handlerchange} required/>
                 </Form.Group>
         )
     }

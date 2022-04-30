@@ -1,11 +1,12 @@
 import React from "react"
 import Image from 'react-bootstrap/Image'
+import {connect} from 'react-redux'
 class ProfileSideBar extends React.Component {
     render() {
         return (
             <ul className='list-group'>
                 <li className='list-group-item text-muted'>
-                    Derrick Muli
+                    {`${this.props.profile.first_name}   ${this.props.profile.last_name}`}
                 </li>
                 <li className='list-group-item'>
                     <center>
@@ -20,7 +21,7 @@ class ProfileSideBar extends React.Component {
                         </strong>
                     </span>
                     <div className='float-end'>
-                    2.13.2022
+                    {this.props.profile.joining_date}
                     </div>
                 </li>
             </ul>
@@ -28,4 +29,11 @@ class ProfileSideBar extends React.Component {
     }
 }
 
-export default ProfileSideBar
+function maptoprops(state){
+    let profile = state.Profile
+    return{
+        profile
+    }
+}
+
+export default connect(maptoprops)(ProfileSideBar)

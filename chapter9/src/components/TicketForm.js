@@ -5,24 +5,54 @@ import IssueTypeInput from "./IssueTypeInput"
 import DepartmentInput from "./DepartmentInput"
 import CommentsInput from "./CommentsInput"
 import {connect} from 'react-redux'
-import {addTicket, ddTicket} from '../actions/TicketActions'
+import {addTicket} from '../actions/TicketActions'
+import SubmitedModal from "./SubmitedModal"
 class TicketForm extends React.Component{
 
     constructor(props){
         super(props)
+        this.state = {
+            modalvisible : false
+        }
         this.handlersubmit = this.handlersubmit.bind(this)
+        this.hidemodal = this.hidemodal.bind(this)
+    }
+
+    hidemodal(event){
+        this.setState(
+            {
+                modalvisible : false
+            }
+        )
     }
 
     handlersubmit(event){
+        event.preventDefault()
         let email  = this.refs.email.refs.email.value.trim()
         let issueType = this.refs.issue.refs.issue.value.trim()
         let department = this.refs.dep.refs.dep.value.trim()
         let comment = this.refs.comments.refs.comments.value.trim()
         this.props.dispatch(addTicket(email,department,issueType,comment,(new Date()).toDateString()))
+        this.clearinputs()
+        this.setState(
+            {
+                modalvisible : true
+            }
+        )
     }
+
+    clearinputs(){
+        this.refs.email.refs.email.value = ""
+        this.refs.issue.refs.issue.value = ""
+        this.refs.dep.refs.dep.value = ""
+        this.refs.comments.refs.comments.value = ""
+    }
+
     render(){
         const style = {color: "#ffaaaa"}
         return (
+            <div>
+            <SubmitedModal show={this.state.modalvisible} onhide={this.hidemodal}/>
             <Form onSubmit={this.handlersubmit}>
                 <EmailInput style = {style} ref = 'email'/>
                 <IssueTypeInput style = {style} ref = 'issue'/>
@@ -33,6 +63,7 @@ class TicketForm extends React.Component{
                     <Button type="reset"> Cancel </Button>{' '}
                 </ButtonGroup>
             </Form>
+            </div>
         )
     }
 }

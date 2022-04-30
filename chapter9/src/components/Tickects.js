@@ -31,7 +31,7 @@ class Tickets extends React.Component {
 }
 
 function maptoprops(state)  {
-    const tickets = state
+    const tickets = state.Ticket
     return {
         tickets
     }

@@ -1,31 +1,18 @@
 import * as types from '../constants/ActionTypes'
-const initialstate = [
-    {
-        id : 0 ,
-        email : 'musembimuli1999@gmail.com',
-        department : 'IT' ,
-        issuetype : 'Email Related Issue' ,
-        message : 'Hiiiiii' ,
-        date : '21/04/2022'
-    }
-]
+const initialstate = []
 let id = 1
 export default function tickets(state = initialstate , action){
     switch(action.type){
         case types.ADD_TICKET :
             return [
                 ...state,
-                {
-                    id : id++ ,
-                    email : action.payload.email ,
-                    department : action.payload.department ,
-                    issuetype : action.payload.issuetype ,
-                    message : action.payload.message ,
-                    date : action.payload.date
-                }
+                action.payload
             ]
-        case types.DELETE_TICKET:
-            return state.filter( user => user.id != action.payload.id )  
+        case types.DELETE_TICKET:{
+            return state.filter( user => user._id != action.payload.id )
+        }
+        case types.GET_TICKETS:
+            return [...action.payload]
         default :
             return state
     }

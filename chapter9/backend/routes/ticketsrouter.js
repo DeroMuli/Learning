@@ -14,14 +14,14 @@ ticketrouter.post("/", async (req,res) => {
     let email = req.body.email.trim()
     let department = req.body.department.trim()
     let issuetype = req.body.issuetype.trim()
-    let message = req.body.message.trim()
+    let comment = req.body.comment.trim()
     let date = req.body.date.trim()
     const ticket = new Ticket(
         {
             email,
             department,
             issuetype,
-            message,
+            comment,
             date
         }
     )

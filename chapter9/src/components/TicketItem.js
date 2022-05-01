@@ -1,6 +1,7 @@
 import React from "react"
 import {Button , Card} from 'react-bootstrap'
 import {connect} from 'react-redux'
+import axios from 'axios'
 import {deleteTicket } from '../actions/TicketActions'
 class TicketItem extends React.Component {
 
@@ -9,8 +10,14 @@ class TicketItem extends React.Component {
         this.deleteticket = this.deleteticket.bind(this)
     }
 
-    deleteticket = function(event){
-        this.props.dispatch(deleteTicket(this.props.id))
+    deleteticket = async function(event){
+        console.log('here')
+        axios.delete(`http://localhost:8080/api/tickets/${this.props.id}`).then(res => {
+            console.log('here')
+            this.props.dispatch(deleteTicket(this.props.id))
+        }).catch(err => {
+            console.log('error')
+        })
     }
     render(){
         return (

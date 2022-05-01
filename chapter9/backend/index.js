@@ -3,7 +3,9 @@ let ticketrouter = require("./routes/ticketsrouter")
 let userrouter = require("./routes/userrouter")
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const cor = require('cors')
 const app = express()
+app.use(cor())
 let port = process.env.PORT || 8080;
 app.use(bodyParser.json())
 app.use(

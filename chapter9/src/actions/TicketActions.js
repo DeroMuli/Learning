@@ -1,15 +1,17 @@
+import { type } from '@testing-library/user-event/dist/type'
 import * as types from '../constants/ActionTypes'
 
-export function addTicket(email,department,issuetype,message,date){
+export function addTicket(ticket){
     return {
         type : types.ADD_TICKET ,
-        payload : {
-            email ,
-            department ,
-            issuetype ,
-            message ,
-            date 
-        }
+        payload : ticket
+    }
+}
+
+export function getTickets(tickets){
+    return {
+        type : types.GET_TICKETS ,
+        payload : tickets
     }
 }
 
